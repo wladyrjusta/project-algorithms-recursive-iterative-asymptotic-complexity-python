@@ -6,19 +6,22 @@ def is_anagram(first_string: str, second_string: str) -> (str, str, bool):
     ):
         return (
             string_ordner(first_string.lower()),
-            string_ordner(second_string.lower()), False
+            string_ordner(second_string.lower()),
+            False,
         )
     first_string_char_counter = char_counter(first_string, second_string)
     second_string_char_counter = char_counter(second_string, first_string)
     if first_string_char_counter == second_string_char_counter:
         return (
             string_ordner(first_string.lower()),
-            string_ordner(second_string.lower()), True
+            string_ordner(second_string.lower()),
+            True,
         )
     else:
         return (
             string_ordner(first_string.lower()),
-            string_ordner(second_string.lower()), False
+            string_ordner(second_string.lower()),
+            False,
         )
     # raise NotImplementedError
 
@@ -44,7 +47,7 @@ def string_ordner(string: str) -> str:
         min_letter_index = index
         for search_index in range(index + 1, list_length):
             if new_string[search_index] < new_string[min_letter_index]:
-                min_letter_index = search_index      
+                min_letter_index = search_index
         curr_char = new_string[index]
         new_string[index] = new_string[min_letter_index]
         new_string[min_letter_index] = curr_char
