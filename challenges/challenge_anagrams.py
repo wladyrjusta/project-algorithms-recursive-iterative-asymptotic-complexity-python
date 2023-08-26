@@ -47,7 +47,7 @@ def char_counter(first_string, second_string):
     return char_counter
 
 
-def string_merge_sort(string: [str], start=0, end=None) -> [str]:
+def string_merge_sort(string, start=0, end=None) -> [str]:
     if end is None:
         end = len(string)
     if (end - start) > 1:
